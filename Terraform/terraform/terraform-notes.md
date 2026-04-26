@@ -2,7 +2,7 @@
 
 
 
-![Terraform Workflow](images/terraform-workflow.svg)
+![Terraform Workflow](../images/terraform-workflow.svg)
 
 > Terraform is an Infrastructure as Code (IaC) tool by HashiCorp that lets you define cloud infrastructure in human-readable configuration files, then create, update, and destroy that infrastructure with commands — instead of clicking through cloud consoles.
 
