@@ -14,15 +14,7 @@ A structured knowledge base for DevOps tools and AWS resources.
 | 06 | IaC | Terraform, CloudFormation, Ansible |
 | 07 | Monitoring | Prometheus, Grafana, ELK, OpenTelemetry |
 | 08 | Security | DevSecOps and secrets management |
-| 09 | AWS Compute | EC2, Lambda, ECS, EKS |
-| 10 | AWS Networking | VPC, Route53, CloudFront, ALB |
-| 11 | AWS Storage | S3, EBS, EFS, Glacier |
-| 12 | AWS Databases | RDS, Aurora, DynamoDB, ElastiCache |
-| 13 | AWS IAM & Security | IAM, KMS, Cognito, Secrets Manager |
-| 14 | AWS DevOps Services | CodePipeline, CodeBuild, CodeDeploy |
-| 15 | AWS Monitoring | CloudWatch, CloudTrail, X-Ray |
-| 16 | AWS Certifications | SAA, DVA, SOA exam notes |
-| 17 | Labs & Projects | Hands-on labs, projects, interview prep |
+| 09 | Labs & Projects | Hands-on labs, projects, interview prep |
 
 ## Conventions
 - 📄 `.md` — notes
