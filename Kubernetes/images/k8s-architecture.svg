@@ -1,0 +1,169 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="560" fill="#0d1117" rx="12"/>
+  <text x="450" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#58a6ff">☸️ Kubernetes Cluster Architecture</text>
+
+  <!-- ── CONTROL PLANE ── -->
+  <rect x="30" y="60" width="840" height="195" rx="10" fill="#161b22" stroke="#388bfd" stroke-width="2"/>
+  <rect x="30" y="60" width="840" height="30" rx="10" fill="#1f2d3d"/>
+  <rect x="30" y="80" width="840" height="10" fill="#1f2d3d"/>
+  <text x="450" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#58a6ff">CONTROL PLANE (Master Node)</text>
+
+  <!-- API Server -->
+  <rect x="50" y="102" width="160" height="130" rx="8" fill="#0d1b2a" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="130" y="124" text-anchor="middle" font-size="20">🌐</text>
+  <text x="130" y="146" text-anchor="middle" font-size="12" font-weight="bold" fill="#58a6ff">API Server</text>
+  <text x="130" y="162" text-anchor="middle" font-size="10" fill="#8b949e">kube-apiserver</text>
+  <line x1="60" y1="172" x2="200" y2="172" stroke="#21262d" stroke-width="1"/>
+  <text x="130" y="186" text-anchor="middle" font-size="10" fill="#e6edf3">Front door to K8s</text>
+  <text x="130" y="200" text-anchor="middle" font-size="10" fill="#8b949e">All kubectl commands</text>
+  <text x="130" y="214" text-anchor="middle" font-size="10" fill="#8b949e">come through here</text>
+  <text x="130" y="225" text-anchor="middle" font-size="9" fill="#388bfd">REST API on :6443</text>
+
+  <!-- etcd -->
+  <rect x="230" y="102" width="160" height="130" rx="8" fill="#0d1b2a" stroke="#ffa657" stroke-width="1.5"/>
+  <text x="310" y="124" text-anchor="middle" font-size="20">🗄️</text>
+  <text x="310" y="146" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffa657">etcd</text>
+  <text x="310" y="162" text-anchor="middle" font-size="10" fill="#8b949e">Cluster database</text>
+  <line x1="240" y1="172" x2="380" y2="172" stroke="#21262d" stroke-width="1"/>
+  <text x="310" y="186" text-anchor="middle" font-size="10" fill="#e6edf3">Key-value store</text>
+  <text x="310" y="200" text-anchor="middle" font-size="10" fill="#8b949e">Source of truth for</text>
+  <text x="310" y="214" text-anchor="middle" font-size="10" fill="#8b949e">all cluster state</text>
+  <text x="310" y="225" text-anchor="middle" font-size="9" fill="#ffa657">⚠️ Back this up!</text>
+
+  <!-- Scheduler -->
+  <rect x="410" y="102" width="160" height="130" rx="8" fill="#0d1b2a" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="490" y="124" text-anchor="middle" font-size="20">📅</text>
+  <text x="490" y="146" text-anchor="middle" font-size="12" font-weight="bold" fill="#3fb950">Scheduler</text>
+  <text x="490" y="162" text-anchor="middle" font-size="10" fill="#8b949e">kube-scheduler</text>
+  <line x1="420" y1="172" x2="560" y2="172" stroke="#21262d" stroke-width="1"/>
+  <text x="490" y="186" text-anchor="middle" font-size="10" fill="#e6edf3">Assigns pods to nodes</text>
+  <text x="490" y="200" text-anchor="middle" font-size="10" fill="#8b949e">Considers: resources,</text>
+  <text x="490" y="214" text-anchor="middle" font-size="10" fill="#8b949e">affinity, taints</text>
+  <text x="490" y="225" text-anchor="middle" font-size="9" fill="#3fb950">Best-fit placement</text>
+
+  <!-- Controller Manager -->
+  <rect x="590" y="102" width="260" height="130" rx="8" fill="#0d1b2a" stroke="#d2a8ff" stroke-width="1.5"/>
+  <text x="720" y="124" text-anchor="middle" font-size="20">⚙️</text>
+  <text x="720" y="146" text-anchor="middle" font-size="12" font-weight="bold" fill="#d2a8ff">Controller Manager</text>
+  <text x="720" y="162" text-anchor="middle" font-size="10" fill="#8b949e">kube-controller-manager</text>
+  <line x1="600" y1="172" x2="840" y2="172" stroke="#21262d" stroke-width="1"/>
+  <text x="720" y="186" text-anchor="middle" font-size="10" fill="#e6edf3">Runs control loops</text>
+  <text x="720" y="200" text-anchor="middle" font-size="10" fill="#8b949e">ReplicaSet · Node · Job</text>
+  <text x="720" y="214" text-anchor="middle" font-size="10" fill="#8b949e">Endpoint · ServiceAccount</text>
+  <text x="720" y="225" text-anchor="middle" font-size="9" fill="#d2a8ff">Reconciles actual ↔ desired</text>
+
+  <!-- Arrow: Control plane → Workers -->
+  <line x1="200" y1="310" x2="200" y2="278" stroke="#30363d" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="200" y1="278" x2="700" y2="278" stroke="#388bfd" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="450" y1="278" x2="450" y2="310" stroke="#30363d" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="700" y1="278" x2="700" y2="310" stroke="#30363d" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="450" y="272" text-anchor="middle" font-size="10" fill="#8b949e">← kubelet receives pod specs via API Server →</text>
+
+  <!-- ── WORKER NODES ── -->
+  <!-- Node 1 -->
+  <rect x="30" y="310" width="250" height="215" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="30" y="310" width="250" height="28" rx="10" fill="#1a2f1a"/>
+  <rect x="30" y="328" width="250" height="10" fill="#1a2f1a"/>
+  <text x="155" y="330" text-anchor="middle" font-size="12" font-weight="bold" fill="#3fb950">Worker Node 1</text>
+
+  <rect x="42" y="345" width="108" height="50" rx="6" fill="#0d1b2a" stroke="#30363d" stroke-width="1"/>
+  <text x="96" y="363" text-anchor="middle" font-size="11" fill="#e6edf3">kubelet</text>
+  <text x="96" y="378" text-anchor="middle" font-size="9" fill="#8b949e">Node agent</text>
+  <text x="96" y="390" text-anchor="middle" font-size="9" fill="#8b949e">runs containers</text>
+
+  <rect x="160" y="345" width="108" height="50" rx="6" fill="#0d1b2a" stroke="#30363d" stroke-width="1"/>
+  <text x="214" y="363" text-anchor="middle" font-size="11" fill="#e6edf3">kube-proxy</text>
+  <text x="214" y="378" text-anchor="middle" font-size="9" fill="#8b949e">Network rules</text>
+  <text x="214" y="390" text-anchor="middle" font-size="9" fill="#8b949e">iptables/IPVS</text>
+
+  <!-- Pods in Node 1 -->
+  <text x="155" y="415" text-anchor="middle" font-size="10" fill="#8b949e">Pods:</text>
+  <rect x="42" y="420" width="68" height="45" rx="5" fill="#0d419d" stroke="#388bfd" stroke-width="1"/>
+  <text x="76" y="437" text-anchor="middle" font-size="9" fill="#e6edf3">📦 web-1</text>
+  <text x="76" y="452" text-anchor="middle" font-size="8" fill="#8b949e">nginx</text>
+  <text x="76" y="462" text-anchor="middle" font-size="8" fill="#58a6ff">:8080</text>
+
+  <rect x="120" y="420" width="68" height="45" rx="5" fill="#0d419d" stroke="#388bfd" stroke-width="1"/>
+  <text x="154" y="437" text-anchor="middle" font-size="9" fill="#e6edf3">📦 api-1</text>
+  <text x="154" y="452" text-anchor="middle" font-size="8" fill="#8b949e">flask:3</text>
+  <text x="154" y="462" text-anchor="middle" font-size="8" fill="#58a6ff">:5000</text>
+
+  <rect x="198" y="420" width="68" height="45" rx="5" fill="#2d1b69" stroke="#d2a8ff" stroke-width="1"/>
+  <text x="232" y="437" text-anchor="middle" font-size="9" fill="#e6edf3">📦 db-0</text>
+  <text x="232" y="452" text-anchor="middle" font-size="8" fill="#8b949e">postgres</text>
+  <text x="232" y="462" text-anchor="middle" font-size="8" fill="#d2a8ff">StatefulSet</text>
+
+  <!-- Node 2 -->
+  <rect x="325" y="310" width="250" height="215" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="325" y="310" width="250" height="28" rx="10" fill="#1a2f1a"/>
+  <rect x="325" y="328" width="250" height="10" fill="#1a2f1a"/>
+  <text x="450" y="330" text-anchor="middle" font-size="12" font-weight="bold" fill="#3fb950">Worker Node 2</text>
+
+  <rect x="337" y="345" width="108" height="50" rx="6" fill="#0d1b2a" stroke="#30363d" stroke-width="1"/>
+  <text x="391" y="363" text-anchor="middle" font-size="11" fill="#e6edf3">kubelet</text>
+  <text x="391" y="378" text-anchor="middle" font-size="9" fill="#8b949e">Node agent</text>
+  <text x="391" y="390" text-anchor="middle" font-size="9" fill="#8b949e">runs containers</text>
+
+  <rect x="455" y="345" width="108" height="50" rx="6" fill="#0d1b2a" stroke="#30363d" stroke-width="1"/>
+  <text x="509" y="363" text-anchor="middle" font-size="11" fill="#e6edf3">kube-proxy</text>
+  <text x="509" y="378" text-anchor="middle" font-size="9" fill="#8b949e">Network rules</text>
+  <text x="509" y="390" text-anchor="middle" font-size="9" fill="#8b949e">iptables/IPVS</text>
+
+  <text x="450" y="415" text-anchor="middle" font-size="10" fill="#8b949e">Pods:</text>
+  <rect x="337" y="420" width="68" height="45" rx="5" fill="#0d419d" stroke="#388bfd" stroke-width="1"/>
+  <text x="371" y="437" text-anchor="middle" font-size="9" fill="#e6edf3">📦 web-2</text>
+  <text x="371" y="452" text-anchor="middle" font-size="8" fill="#8b949e">nginx</text>
+  <text x="371" y="462" text-anchor="middle" font-size="8" fill="#58a6ff">:8080</text>
+
+  <rect x="415" y="420" width="68" height="45" rx="5" fill="#0d419d" stroke="#388bfd" stroke-width="1"/>
+  <text x="449" y="437" text-anchor="middle" font-size="9" fill="#e6edf3">📦 api-2</text>
+  <text x="449" y="452" text-anchor="middle" font-size="8" fill="#8b949e">flask:3</text>
+  <text x="449" y="462" text-anchor="middle" font-size="8" fill="#58a6ff">:5000</text>
+
+  <rect x="493" y="420" width="68" height="45" rx="5" fill="#1a2f0d" stroke="#3fb950" stroke-width="1"/>
+  <text x="527" y="437" text-anchor="middle" font-size="9" fill="#e6edf3">📦 mon</text>
+  <text x="527" y="452" text-anchor="middle" font-size="8" fill="#8b949e">prom</text>
+  <text x="527" y="462" text-anchor="middle" font-size="8" fill="#3fb950">DaemonSet</text>
+
+  <!-- Node 3 -->
+  <rect x="620" y="310" width="250" height="215" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="620" y="310" width="250" height="28" rx="10" fill="#1a2f1a"/>
+  <rect x="620" y="328" width="250" height="10" fill="#1a2f1a"/>
+  <text x="745" y="330" text-anchor="middle" font-size="12" font-weight="bold" fill="#3fb950">Worker Node 3</text>
+
+  <rect x="632" y="345" width="108" height="50" rx="6" fill="#0d1b2a" stroke="#30363d" stroke-width="1"/>
+  <text x="686" y="363" text-anchor="middle" font-size="11" fill="#e6edf3">kubelet</text>
+  <text x="686" y="378" text-anchor="middle" font-size="9" fill="#8b949e">Node agent</text>
+  <text x="686" y="390" text-anchor="middle" font-size="9" fill="#8b949e">runs containers</text>
+
+  <rect x="750" y="345" width="108" height="50" rx="6" fill="#0d1b2a" stroke="#30363d" stroke-width="1"/>
+  <text x="804" y="363" text-anchor="middle" font-size="11" fill="#e6edf3">kube-proxy</text>
+  <text x="804" y="378" text-anchor="middle" font-size="9" fill="#8b949e">Network rules</text>
+  <text x="804" y="390" text-anchor="middle" font-size="9" fill="#8b949e">iptables/IPVS</text>
+
+  <text x="745" y="415" text-anchor="middle" font-size="10" fill="#8b949e">Pods:</text>
+  <rect x="632" y="420" width="68" height="45" rx="5" fill="#0d419d" stroke="#388bfd" stroke-width="1"/>
+  <text x="666" y="437" text-anchor="middle" font-size="9" fill="#e6edf3">📦 web-3</text>
+  <text x="666" y="452" text-anchor="middle" font-size="8" fill="#8b949e">nginx</text>
+  <text x="666" y="462" text-anchor="middle" font-size="8" fill="#58a6ff">:8080</text>
+
+  <rect x="710" y="420" width="68" height="45" rx="5" fill="#132b50" stroke="#388bfd" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="744" y="437" text-anchor="middle" font-size="9" fill="#8b949e">📦 pending</text>
+  <text x="744" y="452" text-anchor="middle" font-size="8" fill="#8b949e">Scheduled</text>
+  <text x="744" y="462" text-anchor="middle" font-size="8" fill="#ffa657">starting...</text>
+
+  <rect x="788" y="420" width="68" height="45" rx="5" fill="#1a2f0d" stroke="#3fb950" stroke-width="1"/>
+  <text x="822" y="437" text-anchor="middle" font-size="9" fill="#e6edf3">📦 mon</text>
+  <text x="822" y="452" text-anchor="middle" font-size="8" fill="#8b949e">prom</text>
+  <text x="822" y="462" text-anchor="middle" font-size="8" fill="#3fb950">DaemonSet</text>
+
+  <!-- kubectl user -->
+  <rect x="30" y="537" width="840" height="16" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="450" y="549" text-anchor="middle" font-size="10" fill="#8b949e">kubectl → API Server (port 6443) → etcd (truth) | Scheduler → Node | Controllers → Reconcile loop</text>
+
+  <defs>
+    <marker id="a" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#388bfd"/>
+    </marker>
+  </defs>
+</svg>

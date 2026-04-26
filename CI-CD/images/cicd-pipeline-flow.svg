@@ -1,0 +1,137 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="420" fill="#0d1117" rx="12"/>
+  <text x="450" y="35" text-anchor="middle" font-size="20" font-weight="bold" fill="#58a6ff">🔄 CI/CD Pipeline Flow</text>
+
+  <!-- Stage boxes helper: y=70, h=260 -->
+  <!-- Step 1: Code -->
+  <rect x="20" y="65" width="120" height="265" rx="10" fill="#161b22" stroke="#388bfd" stroke-width="1.5"/>
+  <rect x="20" y="65" width="120" height="30" rx="10" fill="#1f2d3d"/>
+  <rect x="20" y="85" width="120" height="10" fill="#1f2d3d"/>
+  <text x="80" y="87" text-anchor="middle" font-size="11" font-weight="bold" fill="#58a6ff">1 · CODE</text>
+  <text x="80" y="115" text-anchor="middle" font-size="22">👨‍💻</text>
+  <text x="80" y="140" text-anchor="middle" font-size="11" fill="#e6edf3">Developer</text>
+  <text x="80" y="158" text-anchor="middle" font-size="10" fill="#8b949e">writes code</text>
+  <line x1="35" y1="170" x2="125" y2="170" stroke="#30363d" stroke-width="1"/>
+  <text x="80" y="188" text-anchor="middle" font-size="10" fill="#8b949e">git commit</text>
+  <text x="80" y="204" text-anchor="middle" font-size="10" fill="#8b949e">git push</text>
+  <rect x="35" y="215" width="90" height="22" rx="4" fill="#0d419d"/>
+  <text x="80" y="231" text-anchor="middle" font-size="10" fill="#58a6ff">feature branch</text>
+  <text x="80" y="260" text-anchor="middle" font-size="10" fill="#8b949e">Pull Request</text>
+  <text x="80" y="278" text-anchor="middle" font-size="10" fill="#8b949e">→ main branch</text>
+  <text x="80" y="310" text-anchor="middle" font-size="9" fill="#30363d">triggers ↓</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="143" y1="195" x2="163" y2="195" stroke="#388bfd" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 2: CI -->
+  <rect x="165" y="65" width="130" height="265" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="165" y="65" width="130" height="30" rx="10" fill="#1a2f1a"/>
+  <rect x="165" y="85" width="130" height="10" fill="#1a2f1a"/>
+  <text x="230" y="87" text-anchor="middle" font-size="11" font-weight="bold" fill="#3fb950">2 · BUILD</text>
+  <text x="230" y="115" text-anchor="middle" font-size="22">🔨</text>
+  <text x="230" y="140" text-anchor="middle" font-size="11" fill="#e6edf3">Compile / Build</text>
+  <text x="230" y="158" text-anchor="middle" font-size="10" fill="#8b949e">Auto-triggered</text>
+  <line x1="178" y1="170" x2="282" y2="170" stroke="#30363d" stroke-width="1"/>
+  <text x="230" y="188" text-anchor="middle" font-size="10" fill="#8b949e">✅ Lint check</text>
+  <text x="230" y="204" text-anchor="middle" font-size="10" fill="#8b949e">✅ Compile code</text>
+  <text x="230" y="222" text-anchor="middle" font-size="10" fill="#8b949e">✅ Build artifact</text>
+  <text x="230" y="240" text-anchor="middle" font-size="10" fill="#8b949e">✅ Docker build</text>
+  <rect x="178" y="255" width="104" height="22" rx="4" fill="#1a2f1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="230" y="271" text-anchor="middle" font-size="10" fill="#3fb950">~3-5 minutes</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="298" y1="195" x2="318" y2="195" stroke="#388bfd" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 3: Test -->
+  <rect x="320" y="65" width="130" height="265" rx="10" fill="#161b22" stroke="#ffa657" stroke-width="1.5"/>
+  <rect x="320" y="65" width="130" height="30" rx="10" fill="#2d1f0d"/>
+  <rect x="320" y="85" width="130" height="10" fill="#2d1f0d"/>
+  <text x="385" y="87" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffa657">3 · TEST</text>
+  <text x="385" y="115" text-anchor="middle" font-size="22">🧪</text>
+  <text x="385" y="140" text-anchor="middle" font-size="11" fill="#e6edf3">Automated Tests</text>
+  <text x="385" y="158" text-anchor="middle" font-size="10" fill="#8b949e">Parallel stages</text>
+  <line x1="333" y1="170" x2="437" y2="170" stroke="#30363d" stroke-width="1"/>
+  <text x="385" y="188" text-anchor="middle" font-size="10" fill="#8b949e">✅ Unit tests</text>
+  <text x="385" y="204" text-anchor="middle" font-size="10" fill="#8b949e">✅ Integration tests</text>
+  <text x="385" y="222" text-anchor="middle" font-size="10" fill="#8b949e">✅ Security scan</text>
+  <text x="385" y="240" text-anchor="middle" font-size="10" fill="#8b949e">✅ Code coverage</text>
+  <rect x="333" y="255" width="104" height="22" rx="4" fill="#2d1f0d" stroke="#ffa657" stroke-width="1"/>
+  <text x="385" y="271" text-anchor="middle" font-size="10" fill="#ffa657">~5-10 minutes</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="453" y1="195" x2="473" y2="195" stroke="#388bfd" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 4: Publish -->
+  <rect x="475" y="65" width="130" height="265" rx="10" fill="#161b22" stroke="#d2a8ff" stroke-width="1.5"/>
+  <rect x="475" y="65" width="130" height="30" rx="10" fill="#1f1535"/>
+  <rect x="475" y="85" width="130" height="10" fill="#1f1535"/>
+  <text x="540" y="87" text-anchor="middle" font-size="11" font-weight="bold" fill="#d2a8ff">4 · PUBLISH</text>
+  <text x="540" y="115" text-anchor="middle" font-size="22">📤</text>
+  <text x="540" y="140" text-anchor="middle" font-size="11" fill="#e6edf3">Push Artifact</text>
+  <text x="540" y="158" text-anchor="middle" font-size="10" fill="#8b949e">Immutable tag</text>
+  <line x1="488" y1="170" x2="592" y2="170" stroke="#30363d" stroke-width="1"/>
+  <text x="540" y="188" text-anchor="middle" font-size="10" fill="#8b949e">Docker push</text>
+  <text x="540" y="204" text-anchor="middle" font-size="10" fill="#8b949e">Tag: git SHA</text>
+  <text x="540" y="222" text-anchor="middle" font-size="10" fill="#8b949e">→ ECR / Docker Hub</text>
+  <text x="540" y="240" text-anchor="middle" font-size="10" fill="#8b949e">→ Artifact store</text>
+  <rect x="488" y="255" width="104" height="22" rx="4" fill="#1f1535" stroke="#d2a8ff" stroke-width="1"/>
+  <text x="540" y="271" text-anchor="middle" font-size="10" fill="#d2a8ff">One artifact →</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="608" y1="195" x2="628" y2="195" stroke="#388bfd" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 5: Deploy -->
+  <rect x="630" y="65" width="250" height="265" rx="10" fill="#161b22" stroke="#f78166" stroke-width="1.5"/>
+  <rect x="630" y="65" width="250" height="30" rx="10" fill="#2d1515"/>
+  <rect x="630" y="85" width="250" height="10" fill="#2d1515"/>
+  <text x="755" y="87" text-anchor="middle" font-size="11" font-weight="bold" fill="#f78166">5 · DEPLOY</text>
+
+  <!-- Staging -->
+  <rect x="645" y="100" width="100" height="110" rx="6" fill="#1a2f1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="695" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#3fb950">Staging</text>
+  <text x="695" y="140" text-anchor="middle" font-size="20">🚀</text>
+  <text x="695" y="165" text-anchor="middle" font-size="10" fill="#8b949e">Auto-deploy</text>
+  <text x="695" y="180" text-anchor="middle" font-size="10" fill="#8b949e">Smoke tests</text>
+  <text x="695" y="196" text-anchor="middle" font-size="10" fill="#8b949e">QA verify</text>
+
+  <!-- Production -->
+  <rect x="763" y="100" width="103" height="110" rx="6" fill="#2d1515" stroke="#f78166" stroke-width="1"/>
+  <text x="814" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#f78166">Production</text>
+  <text x="814" y="140" text-anchor="middle" font-size="20">🌐</text>
+  <text x="814" y="165" text-anchor="middle" font-size="10" fill="#8b949e">Manual gate</text>
+  <text x="814" y="180" text-anchor="middle" font-size="10" fill="#8b949e">or Auto-deploy</text>
+  <text x="814" y="196" text-anchor="middle" font-size="10" fill="#8b949e">Rolling update</text>
+
+  <!-- Approval arrow -->
+  <line x1="748" y1="155" x2="760" y2="155" stroke="#ffa657" stroke-width="2" marker-end="url(#arrOrange)"/>
+  <text x="754" y="148" text-anchor="middle" font-size="9" fill="#ffa657">✔</text>
+
+  <!-- Rollback -->
+  <rect x="645" y="225" width="220" height="40" rx="5" fill="#161b22" stroke="#f78166" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="755" y="240" text-anchor="middle" font-size="10" fill="#f78166">🔙 Rollback available at any time</text>
+  <text x="755" y="257" text-anchor="middle" font-size="9" fill="#8b949e">kubectl rollout undo / revert Git commit</text>
+
+  <!-- Bottom labels -->
+  <rect x="20" y="343" width="860" height="65" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="450" y="362" text-anchor="middle" font-size="11" font-weight="bold" fill="#e6edf3">Tools at each stage:</text>
+  <text x="80" y="382" text-anchor="middle" font-size="10" fill="#58a6ff">Git / GitHub</text>
+  <text x="230" y="382" text-anchor="middle" font-size="10" fill="#3fb950">GitHub Actions</text>
+  <text x="385" y="382" text-anchor="middle" font-size="10" fill="#ffa657">Jest / Pytest</text>
+  <text x="540" y="382" text-anchor="middle" font-size="10" fill="#d2a8ff">Docker / ECR</text>
+  <text x="755" y="382" text-anchor="middle" font-size="10" fill="#f78166">K8s / ArgoCD</text>
+
+  <text x="80" y="399" text-anchor="middle" font-size="9" fill="#8b949e">GitLab / Bitbucket</text>
+  <text x="230" y="399" text-anchor="middle" font-size="9" fill="#8b949e">Jenkins / GitLab CI</text>
+  <text x="385" y="399" text-anchor="middle" font-size="9" fill="#8b949e">Trivy / SonarQube</text>
+  <text x="540" y="399" text-anchor="middle" font-size="9" fill="#8b949e">Nexus / JFrog</text>
+  <text x="755" y="399" text-anchor="middle" font-size="9" fill="#8b949e">Helm / Terraform</text>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#388bfd"/>
+    </marker>
+    <marker id="arrOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ffa657"/>
+    </marker>
+  </defs>
+</svg>

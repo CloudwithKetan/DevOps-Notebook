@@ -1,0 +1,153 @@
+<svg viewBox="0 0 860 460" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, monospace, Arial">
+  <rect width="860" height="460" fill="#0d1117" rx="12"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#58a6ff">🐧 Linux File System Structure</text>
+
+  <!-- Root node -->
+  <rect x="375" y="52" width="110" height="40" rx="8" fill="#1f2d3d" stroke="#388bfd" stroke-width="2"/>
+  <text x="430" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#58a6ff">/</text>
+  <text x="430" y="85" text-anchor="middle" font-size="10" fill="#8b949e">root of filesystem</text>
+
+  <!-- Trunk line down -->
+  <line x1="430" y1="92" x2="430" y2="110" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Horizontal bar -->
+  <line x1="55" y1="110" x2="810" y2="110" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Colors per category: system=blue, user=green, var=orange, dev=purple, config=yellow -->
+
+  <!-- /bin -->
+  <line x1="80" y1="110" x2="80" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="30" y="128" width="100" height="90" rx="6" fill="#0d1b2a" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="80" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#388bfd">/bin</text>
+  <line x1="40" y1="158" x2="120" y2="158" stroke="#21262d" stroke-width="1"/>
+  <text x="80" y="172" text-anchor="middle" font-size="10" fill="#e6edf3">Binaries</text>
+  <text x="80" y="188" text-anchor="middle" font-size="9" fill="#8b949e">ls, cp, mv</text>
+  <text x="80" y="204" text-anchor="middle" font-size="9" fill="#8b949e">bash, cat</text>
+
+  <!-- /sbin -->
+  <line x1="175" y1="110" x2="175" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="128" y="128" width="94" height="90" rx="6" fill="#0d1b2a" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="175" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#388bfd">/sbin</text>
+  <line x1="135" y1="158" x2="215" y2="158" stroke="#21262d" stroke-width="1"/>
+  <text x="175" y="172" text-anchor="middle" font-size="10" fill="#e6edf3">System bins</text>
+  <text x="175" y="188" text-anchor="middle" font-size="9" fill="#8b949e">iptables</text>
+  <text x="175" y="204" text-anchor="middle" font-size="9" fill="#8b949e">fdisk, init</text>
+
+  <!-- /etc -->
+  <line x1="268" y1="110" x2="268" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="228" y="128" width="80" height="90" rx="6" fill="#2d2500" stroke="#ffa657" stroke-width="1.5"/>
+  <text x="268" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffa657">/etc</text>
+  <line x1="233" y1="158" x2="303" y2="158" stroke="#21262d" stroke-width="1"/>
+  <text x="268" y="172" text-anchor="middle" font-size="10" fill="#e6edf3">Config files</text>
+  <text x="268" y="188" text-anchor="middle" font-size="9" fill="#8b949e">nginx.conf</text>
+  <text x="268" y="204" text-anchor="middle" font-size="9" fill="#8b949e">/etc/hosts</text>
+
+  <!-- /home -->
+  <line x1="360" y1="110" x2="360" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="318" y="128" width="84" height="90" rx="6" fill="#1a2f1a" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="360" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#3fb950">/home</text>
+  <line x1="323" y1="158" x2="397" y2="158" stroke="#21262d" stroke-width="1"/>
+  <text x="360" y="172" text-anchor="middle" font-size="10" fill="#e6edf3">User dirs</text>
+  <text x="360" y="188" text-anchor="middle" font-size="9" fill="#8b949e">/home/omkar</text>
+  <text x="360" y="204" text-anchor="middle" font-size="9" fill="#8b949e">/home/user2</text>
+
+  <!-- /var -->
+  <line x1="430" y1="110" x2="430" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="408" y="128" width="44" height="90" rx="6" fill="#2d1f0d" stroke="#ffa657" stroke-width="2"/>
+  <text x="430" y="152" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffa657">/var</text>
+  <line x1="412" y1="160" x2="448" y2="160" stroke="#21262d" stroke-width="1"/>
+  <text x="430" y="174" text-anchor="middle" font-size="9" fill="#e6edf3">Variable</text>
+  <text x="430" y="188" text-anchor="middle" font-size="9" fill="#8b949e">logs</text>
+  <text x="430" y="202" text-anchor="middle" font-size="9" fill="#8b949e">mail</text>
+
+  <!-- /tmp -->
+  <line x1="510" y1="110" x2="510" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="472" y="128" width="76" height="90" rx="6" fill="#161b22" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="510" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#8b949e">/tmp</text>
+  <line x1="477" y1="158" x2="543" y2="158" stroke="#21262d" stroke-width="1"/>
+  <text x="510" y="172" text-anchor="middle" font-size="10" fill="#e6edf3">Temporary</text>
+  <text x="510" y="188" text-anchor="middle" font-size="9" fill="#8b949e">Cleared on</text>
+  <text x="510" y="204" text-anchor="middle" font-size="9" fill="#8b949e">reboot</text>
+
+  <!-- /proc -->
+  <line x1="600" y1="110" x2="600" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="558" y="128" width="84" height="90" rx="6" fill="#2d1b69" stroke="#d2a8ff" stroke-width="1.5"/>
+  <text x="600" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#d2a8ff">/proc</text>
+  <line x1="563" y1="158" x2="637" y2="158" stroke="#21262d" stroke-width="1"/>
+  <text x="600" y="172" text-anchor="middle" font-size="10" fill="#e6edf3">Virtual FS</text>
+  <text x="600" y="188" text-anchor="middle" font-size="9" fill="#8b949e">Process info</text>
+  <text x="600" y="204" text-anchor="middle" font-size="9" fill="#8b949e">Kernel data</text>
+
+  <!-- /dev -->
+  <line x1="695" y1="110" x2="695" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="653" y="128" width="84" height="90" rx="6" fill="#2d1b69" stroke="#d2a8ff" stroke-width="1.5"/>
+  <text x="695" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#d2a8ff">/dev</text>
+  <line x1="658" y1="158" x2="732" y2="158" stroke="#21262d" stroke-width="1"/>
+  <text x="695" y="172" text-anchor="middle" font-size="10" fill="#e6edf3">Devices</text>
+  <text x="695" y="188" text-anchor="middle" font-size="9" fill="#8b949e">sda, sdb</text>
+  <text x="695" y="204" text-anchor="middle" font-size="9" fill="#8b949e">null, tty</text>
+
+  <!-- /usr -->
+  <line x1="790" y1="110" x2="790" y2="128" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="748" y="128" width="84" height="90" rx="6" fill="#0d1b2a" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="790" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#388bfd">/usr</text>
+  <line x1="753" y1="158" x2="827" y2="158" stroke="#21262d" stroke-width="1"/>
+  <text x="790" y="172" text-anchor="middle" font-size="10" fill="#e6edf3">User programs</text>
+  <text x="790" y="188" text-anchor="middle" font-size="9" fill="#8b949e">/usr/bin</text>
+  <text x="790" y="204" text-anchor="middle" font-size="9" fill="#8b949e">/usr/local</text>
+
+  <!-- /var subfolders -->
+  <line x1="430" y1="220" x2="430" y2="240" stroke="#30363d" stroke-width="1"/>
+  <line x1="340" y1="240" x2="520" y2="240" stroke="#30363d" stroke-width="1"/>
+  <line x1="360" y1="240" x2="360" y2="255" stroke="#30363d" stroke-width="1"/>
+  <line x1="430" y1="240" x2="430" y2="255" stroke="#30363d" stroke-width="1"/>
+  <line x1="500" y1="240" x2="500" y2="255" stroke="#30363d" stroke-width="1"/>
+
+  <rect x="310" y="255" width="100" height="40" rx="5" fill="#2d1f0d" stroke="#ffa657" stroke-width="1"/>
+  <text x="360" y="273" text-anchor="middle" font-size="11" fill="#ffa657">/var/log</text>
+  <text x="360" y="288" text-anchor="middle" font-size="9" fill="#8b949e">app & sys logs</text>
+
+  <rect x="378" y="255" width="104" height="40" rx="5" fill="#2d1f0d" stroke="#ffa657" stroke-width="1"/>
+  <text x="430" y="273" text-anchor="middle" font-size="11" fill="#ffa657">/var/www</text>
+  <text x="430" y="288" text-anchor="middle" font-size="9" fill="#8b949e">web root</text>
+
+  <rect x="450" y="255" width="100" height="40" rx="5" fill="#2d1f0d" stroke="#ffa657" stroke-width="1"/>
+  <text x="500" y="273" text-anchor="middle" font-size="11" fill="#ffa657">/var/lib</text>
+  <text x="500" y="288" text-anchor="middle" font-size="9" fill="#8b949e">databases</text>
+
+  <!-- /home subfolders -->
+  <line x1="360" y1="220" x2="360" y2="240" stroke="#30363d" stroke-width="1"/>
+  <line x1="310" y1="240" x2="410" y2="240" stroke="#30363d" stroke-width="1"/>
+  <line x1="325" y1="240" x2="325" y2="255" stroke="#30363d" stroke-width="1"/>
+  <line x1="395" y1="240" x2="395" y2="255" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Wait these overlap, just do /home below var -->
+  <!-- /etc subfolders -->
+  <line x1="268" y1="220" x2="268" y2="255" stroke="#30363d" stroke-width="1"/>
+  <rect x="220" y="255" width="96" height="40" rx="5" fill="#2d2500" stroke="#ffa657" stroke-width="1"/>
+  <text x="268" y="273" text-anchor="middle" font-size="10" fill="#ffa657">/etc/nginx/</text>
+  <text x="268" y="288" text-anchor="middle" font-size="9" fill="#8b949e">nginx.conf</text>
+
+  <!-- Permissions section -->
+  <rect x="30" y="315" width="400" height="120" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="230" y="337" text-anchor="middle" font-size="12" font-weight="bold" fill="#e6edf3">🔐 Permission Bits</text>
+  <text x="230" y="357" text-anchor="middle" font-size="11" font-family="monospace" fill="#58a6ff">-  r w x  r - x  r - -</text>
+  <text x="230" y="374" text-anchor="middle" font-size="10" fill="#8b949e">type  owner  group  others</text>
+  <text x="100" y="397" text-anchor="middle" font-size="11" fill="#3fb950">r=4  w=2  x=1</text>
+  <text x="300" y="397" text-anchor="middle" font-size="11" fill="#ffa657">755 = rwxr-xr-x</text>
+  <text x="100" y="416" text-anchor="middle" font-size="10" fill="#8b949e">read=4 write=2 exec=1</text>
+  <text x="300" y="416" text-anchor="middle" font-size="10" fill="#8b949e">644=rw-r--r-- 600=rw-------</text>
+
+  <!-- Commands section -->
+  <rect x="445" y="315" width="400" height="120" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="645" y="337" text-anchor="middle" font-size="12" font-weight="bold" fill="#e6edf3">⚡ Essential Commands</text>
+  <text x="530" y="357" font-size="10" fill="#3fb950">Navigation:</text>
+  <text x="535" y="373" font-size="10" font-family="monospace" fill="#e6edf3">ls -la  cd  pwd  find</text>
+  <text x="530" y="392" font-size="10" fill="#ffa657">File ops:</text>
+  <text x="535" y="408" font-size="10" font-family="monospace" fill="#e6edf3">cp  mv  rm -rf  chmod</text>
+  <text x="690" y="357" font-size="10" fill="#d2a8ff">Process:</text>
+  <text x="695" y="373" font-size="10" font-family="monospace" fill="#e6edf3">ps aux  kill  top</text>
+  <text x="690" y="392" font-size="10" fill="#58a6ff">Search:</text>
+  <text x="695" y="408" font-size="10" font-family="monospace" fill="#e6edf3">grep -r  find  awk</text>
+  <text x="645" y="428" text-anchor="middle" font-size="10" fill="#8b949e">tail -f /var/log/app.log  ← follow logs live</text>
+</svg>

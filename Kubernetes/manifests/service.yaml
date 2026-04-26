@@ -1,3 +1,13 @@
-# Kubernetes Service
-# Replace this with your actual YAML configuration
----
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  namespace: production
+spec:
+  selector:
+    app: web-app
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  type: ClusterIP
