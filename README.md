@@ -6,15 +6,15 @@ A structured knowledge base for DevOps tools and AWS resources.
 | # | Section | Description |
 |---|---------|-------------|
 | 00 | Index & Roadmap | Start here — overview and cheatsheets |
-| 01 | Linux & Shell | OS fundamentals and scripting |
-| 02 | Git | Version control workflows |
-| 03 | Docker | Containers and Compose |
-| 04 | Kubernetes | Orchestration and manifests |
-| 05 | CI/CD | Pipelines — GitHub Actions, Jenkins, GitLab, ArgoCD |
-| 06 | IaC | Terraform, CloudFormation, Ansible |
-| 07 | Monitoring | Prometheus, Grafana, ELK, OpenTelemetry |
-| 08 | Security | DevSecOps and secrets management |
-| 09 | Labs & Projects | Hands-on labs, projects, interview prep |
+| 01 | Interview Materials |
+| 02 | Linux & Shell | OS fundamentals and scripting |
+| 03 | Git | Version control workflows |
+| 04 | Docker | Containers and Compose |
+| 05 | Kubernetes | Orchestration and manifests |
+| 06 | CI/CD | Pipelines — GitHub Actions, Jenkins, GitLab, ArgoCD |
+| 07 | IaC | Terraform, CloudFormation, Ansible |
+| 08 | Monitoring | Prometheus, Grafana, ELK, OpenTelemetry |
+| 09 | Security | DevSecOps and secrets management |
 
 ## Conventions
 - 📄 `.md` — notes
